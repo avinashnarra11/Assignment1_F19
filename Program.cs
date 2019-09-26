@@ -47,6 +47,7 @@ namespace Assignment1_F19
             int[] a2 = new int[] { 1, 2, 4, 5 };
             int[] w = getLargestCommonSubArray(a1, a2);
             string s = String.Join("", w);
+            Console.WriteLine("Largest common subarray in the given two arrays:");
             foreach (var item in w)
             {
                 Console.WriteLine(item.ToString());
@@ -58,20 +59,15 @@ namespace Assignment1_F19
         {
             try
             {
-               
                 
-                int a;
-                int b;
-                int m;
-                int n;
-                int j;
+                
+                int a,b,m,n,j,c=0;
                 bool selfDividing;
-                int c=0;
-
+                
+  
                 a = x;
                 b = y;
 
-                
                 for (int i = a; i < b + 1; i++) 
                 {
                     selfDividing = true; 
@@ -92,22 +88,19 @@ namespace Assignment1_F19
                                 selfDividing = false;
                                 break;
                             }
-                            else
-                            {
-                                
-                            }
+                            
                         }
                         j = j / 10; 
                     }
                     if (selfDividing == true)
                     {
-                        Debug.WriteLine("{i} is self-dividing", i);
+                        Debug.WriteLine($"{i} is self dividing", i);
                         c += 1;
                     }
-                   
+                    
                     if (i == b)
                     {
-                        Debug.WriteLine("no. of self dividing numbers: {countOfSd}", c);
+                        Debug.WriteLine($"There is/are {c} self dividing numbers", c);
                     }
                 }
 
@@ -119,7 +112,8 @@ namespace Assignment1_F19
                 Console.WriteLine("Exception occurred while computing print SelfDividingNumbers()");
             }
         }
-        
+
+
 
 
         public static void printSeries(int n)
